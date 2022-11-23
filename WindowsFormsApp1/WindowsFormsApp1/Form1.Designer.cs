@@ -44,17 +44,17 @@
             this.gbGT = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtLuong = new System.Windows.Forms.TextBox();
             this.txtSGTC = new System.Windows.Forms.TextBox();
             this.btnLuu = new System.Windows.Forms.Button();
             this.dgvNV = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tennv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Giolam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tangca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LuongNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbGT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             this.SuspendLayout();
@@ -206,16 +206,16 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Số giờ tăng ca";
             // 
-            // textBox4
+            // txtLuong
             // 
-            this.textBox4.Location = new System.Drawing.Point(402, 177);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtLuong.Enabled = false;
+            this.txtLuong.Location = new System.Drawing.Point(402, 177);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(112, 20);
+            this.txtLuong.TabIndex = 9;
             // 
             // txtSGTC
             // 
-            this.txtSGTC.Enabled = false;
             this.txtSGTC.Location = new System.Drawing.Point(402, 145);
             this.txtSGTC.Name = "txtSGTC";
             this.txtSGTC.Size = new System.Drawing.Size(111, 20);
@@ -235,60 +235,61 @@
             // 
             this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
+            this.Manv,
+            this.Tennv,
+            this.Gt,
+            this.Ngaysinh,
+            this.Giolam,
+            this.Tangca,
+            this.LuongNV});
             this.dgvNV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvNV.Location = new System.Drawing.Point(0, 217);
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.Size = new System.Drawing.Size(800, 92);
             this.dgvNV.TabIndex = 12;
+            this.dgvNV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNV_RowEnter);
             // 
-            // Column1
+            // Manv
             // 
-            this.Column1.DataPropertyName = "Manv";
-            this.Column1.HeaderText = "Mã nhân viên";
-            this.Column1.Name = "Column1";
+            this.Manv.DataPropertyName = "Manv";
+            this.Manv.HeaderText = "Mã nhân viên";
+            this.Manv.Name = "Manv";
             // 
-            // Column2
+            // Tennv
             // 
-            this.Column2.DataPropertyName = "Tennv";
-            this.Column2.HeaderText = "Tên nhân viên";
-            this.Column2.Name = "Column2";
+            this.Tennv.DataPropertyName = "Tennv";
+            this.Tennv.HeaderText = "Tên nhân viên";
+            this.Tennv.Name = "Tennv";
             // 
-            // Column3
+            // Gt
             // 
-            this.Column3.DataPropertyName = "Gt";
-            this.Column3.HeaderText = "Giới tính";
-            this.Column3.Name = "Column3";
+            this.Gt.DataPropertyName = "Gt";
+            this.Gt.HeaderText = "Giới tính";
+            this.Gt.Name = "Gt";
             // 
-            // Column4
+            // Ngaysinh
             // 
-            this.Column4.DataPropertyName = "Ngaysinh";
-            this.Column4.HeaderText = "Ngày sinh";
-            this.Column4.Name = "Column4";
+            this.Ngaysinh.DataPropertyName = "Ngaysinh";
+            this.Ngaysinh.HeaderText = "Ngày sinh";
+            this.Ngaysinh.Name = "Ngaysinh";
             // 
-            // Column5
+            // Giolam
             // 
-            this.Column5.DataPropertyName = "Giolam";
-            this.Column5.HeaderText = "Số giờ làm việc";
-            this.Column5.Name = "Column5";
+            this.Giolam.DataPropertyName = "Giolam";
+            this.Giolam.HeaderText = "Số giờ làm việc";
+            this.Giolam.Name = "Giolam";
             // 
-            // Column6
+            // Tangca
             // 
-            this.Column6.DataPropertyName = "Tangca";
-            this.Column6.HeaderText = "Số tăng ca";
-            this.Column6.Name = "Column6";
+            this.Tangca.DataPropertyName = "Tangca";
+            this.Tangca.HeaderText = "Số tăng ca";
+            this.Tangca.Name = "Tangca";
             // 
-            // Column7
+            // LuongNV
             // 
-            this.Column7.DataPropertyName = "LuongNV";
-            this.Column7.HeaderText = "Lương thực lãnh";
-            this.Column7.Name = "Column7";
+            this.LuongNV.DataPropertyName = "LuongNV";
+            this.LuongNV.HeaderText = "Lương thực lãnh";
+            this.LuongNV.Name = "LuongNV";
             // 
             // Form1
             // 
@@ -298,7 +299,7 @@
             this.Controls.Add(this.dgvNV);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.txtSGTC);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtLuong);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.gbGT);
@@ -341,17 +342,17 @@
         private System.Windows.Forms.GroupBox gbGT;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtLuong;
         private System.Windows.Forms.TextBox txtSGTC;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.DataGridView dgvNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Manv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tennv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Giolam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tangca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LuongNV;
     }
 }
 
